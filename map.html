@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+	  p  {
+    color:#f48040;
+    font-family:Carme, serif;
+    font-size:16;
+}
+    </style>
+	<link href='http://fonts.googleapis.com/css?family=Carme' rel='stylesheet' type='text/css'>
+	<!-- <link href="style.css" rel="stylesheet"> -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript">
+	
+      function initialize() {
+	  
+	  
+	  
+
+	  
+      var myLatlng = {lat: 44.9778, lng: -93.2650};
+	  var mrsSHouse = { lat: 43.659337 , lng: -79.340858};
+	  var soccerField = { lat:43.894245, lng: -79.336163};
+	  var felix = { lat: 43.648320, lng: -79.397878};
+	  var alisonHouse = { lat: 43.894783, lng: -79.321199};
+	  var ranch = { lat: 43.6829453, lng: -79.9945016};
+	  var mapOptions = {
+          center: { lat:43.733821 , lng: -79.904551},
+          zoom: 10,
+		  mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+			
+	var contentString = '<div id="content">' +
+	'<p>Cosima goes to school here.</p></br><img src="images/cosima.jpg">'+
+	'</div>';
+	var contentString2 = '<div id="content">' +
+	'<p>Mrs. S\u0027s House</p></br><img src="images/siobhan.jpeg">'+
+	'</div>';
+	var contentString3 = '<div id="content">' +
+	'<p>Soccer Field</p></br><img src="images/alisonsoccer.jpg">'+
+	'</div>';
+	var contentString4 = '<div id="content">' +
+	'<p>Felix\u0027s Loft</p></br><img src="images/felix.jpg">'+
+	'</div>';
+	var contentString5 = '<div id="content">' +
+	'<p>Alison\u0027s house</p></br><img src="images/alisonhouse.jpg">'+
+	'</div>';
+	var contentString6 = '<div id="content">' +
+	'<p>Prolethean Ranch</p></br><img src="images/ranchdude.jpg">'+
+	'</div>';
+	
+		
+var soccer = 'images/soccer.png';
+var house = 'images/house.png';
+var cow = 'images/cow.png';
+	
+	var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Minneapolis',
+	  icon: house
+  });
+  var marker2 = new google.maps.Marker({
+      position: mrsSHouse,
+      map: map,
+      title: 'Mrs. S\u0027s House',
+	  icon: house
+
+  });
+  
+  var marker3 = new google.maps.Marker({
+      position: soccerField,
+      map: map,
+      title: 'Soccer Field',
+	  icon: soccer
+
+  });
+  
+  var marker4 = new google.maps.Marker({
+      position: felix,
+      map: map,
+      title: 'Felix\u0027s Loft',
+	  icon: house
+
+  });
+  
+  var marker5 = new google.maps.Marker({
+      position: alisonHouse,
+      map: map,
+      title: 'Alison\u0027s House',
+	  icon: house
+
+  });
+  
+  var marker6 = new google.maps.Marker({
+      position: ranch,
+      map: map,
+      title: 'Prolethean Ranch',
+	  icon: cow
+  });
+
+
+  
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+  
+   var infowindow2 = new google.maps.InfoWindow({
+      content: contentString2
+  });
+  
+   var infowindow3 = new google.maps.InfoWindow({
+      content: contentString3
+  });
+  
+  var infowindow4 = new google.maps.InfoWindow({
+      content: contentString4
+  });
+  
+  var infowindow5 = new google.maps.InfoWindow({
+      content: contentString5
+  });
+  
+  var infowindow6 = new google.maps.InfoWindow({
+      content: contentString6
+  });
+  
+  google.maps.event.addListener(marker,'click', function() {
+	infowindow.open(map,marker);
+});
+
+google.maps.event.addListener(marker2,'click', function() {
+	infowindow2.open(map,marker2)
+});
+
+google.maps.event.addListener(marker3,'click', function() {
+	<!-- infowindow2.close(map,marker2); -->
+	infowindow3.open(map,marker3)
+});
+
+google.maps.event.addListener(marker4,'click', function() {
+	infowindow4.open(map,marker4)
+});
+
+google.maps.event.addListener(marker5,'click', function() {
+	infowindow5.open(map,marker5)
+});
+
+google.maps.event.addListener(marker6,'click', function() {
+	infowindow6.open(map,marker6)
+});
+
+
+
+  
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+<div id="map-canvas"></div>
+  </body>
+</html>

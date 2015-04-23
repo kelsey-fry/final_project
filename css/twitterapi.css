@@ -1,0 +1,38 @@
+#twitternames {
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+#twitter_screen_name {
+	font-family: Carme, serif;
+	font-size: 14px;
+	color: #717171;
+	padding-left: 15px;
+	/* padding-top: 10px; */
+}
+
+.twitter_screen_name:a{
+	text-decoration: none;
+}
+
+#twitter_real_name {
+	font-family: Carme, serif;
+	font-size: 12px;
+	color: #f48040;
+	padding-left: 15px;
+}
+
+#profile_photos img{
+	float: right;
+}
+.twitter_status {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/*border-bottom: solid #eeeeee 2px;*/
+}
+
+.twitpics {
+	border-bottom: solid #eeeeee 2px;
+	padding-bottom: 10px;
+}
+
